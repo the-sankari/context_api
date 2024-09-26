@@ -1,8 +1,12 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Button, Container, Form } from "react-bootstrap";
+import { TaskContext } from "./TaskContext";
 
-const TodoForm = ({ addTask }) => {
+const TodoForm = () => {
   const [input, setInput] = useState("");
+  
+  // use useContext to access addTask
+  const {addTask} = useContext(TaskContext)
   const handleSubmit = (e) => {
     e.preventDefault();
     addTask(input);
