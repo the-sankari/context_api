@@ -39,6 +39,13 @@ export const TaskProvider = ({ children }) => {
     );
   };
 
+  const editTask = (index, newTask) => {
+    const editedTask = tasks.map((t, i) =>
+      i === index ? { ...t, task: newTask } : t
+    );
+    setTasks(editedTask);
+  };
+
   const filteredTasks = tasks.filter((task) => {
     if (filter === "All") return true;
     if (filter === "Completed") return task.completed;
@@ -48,7 +55,14 @@ export const TaskProvider = ({ children }) => {
 
   return (
     <TaskContext.Provider
-      value={{ tasks:filteredTasks, addTask, deleteTask, toggleTaskCompleted, setFilter }}
+      value={{
+        tasks: filteredTasks,
+        addTask,
+        deleteTask,
+        toggleTaskCompleted,
+        setFilter,
+        editTask,
+      }}
     >
       {children}
     </TaskContext.Provider>

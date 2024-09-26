@@ -6,7 +6,8 @@ import TodoItem from "./TodoItem";
 
 const TodoList = () => {
   // Access tasks and deleteTask via useContext
-  const { tasks, deleteTask, toggleTaskCompleted } = useContext(TaskContext);
+  const { tasks, deleteTask, toggleTaskCompleted, editTask } =
+    useContext(TaskContext);
   return (
     <Container>
       <ListGroup>
@@ -19,6 +20,7 @@ const TodoList = () => {
               task={task}
               toggleTaskCompleted={() => toggleTaskCompleted(index)}
               deleteTask={() => deleteTask(index)}
+              editTask={(newTask) => editTask(index, newTask)}
             />
           ))
         )}
