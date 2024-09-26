@@ -1,13 +1,26 @@
 /* eslint-disable react/prop-types */
-import React from "react";
-import { Button } from "react-bootstrap";
+import React, { useContext } from "react";
+import { Button, Container } from "react-bootstrap";
+import { TaskContext } from "./TaskContext";
+import TodoItem from "./TodoItem";
 
-const TodoList = ({ task, deleteTask }) => {
+const TodoList = () => {
+  // Access tasks and deleteTask via useContext
+  const { tasks, deleteTask } = useContext(TaskContext);
   return (
-    <div>
-      <p>{task.task}</p>
-      <Button onClick={deleteTask}>Delete</Button>
-    </div>
+    <Container>
+      {tasks.length === 0 ? (
+        <p>No tasks available</p>
+      ) : (
+        tasks.map((task, index) => (
+          <TodoItem
+            key={index}
+            task={task}
+            deleteTask={() => deleteTask(index)}
+          />
+        ))
+      )}
+    </Container>
   );
 };
 
