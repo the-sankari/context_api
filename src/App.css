@@ -1,0 +1,15 @@
+#root {
+  background-color: #222;
+  color: #fefefe;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  flex-direction: column;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
