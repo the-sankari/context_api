@@ -1,22 +1,12 @@
-/* eslint-disable react/prop-types */
 import React from "react";
-import TodoList from "./TodoList";
+import { Button, Container } from "react-bootstrap";
 
-const TodoItem = ({ tasks, deleteTask }) => {
+const TodoItem = ({ task, deleteTask }) => {
   return (
-    <div>
-      {tasks.length === 0 ? (
-        <p>No tasks availabel</p>
-      ) : (
-        tasks.map((task, index) => (
-          <TodoList
-            key={index}
-            task={task}
-            deleteTask={() => deleteTask(index)}
-          />
-        ))
-      )}
-    </div>
+    <Container>
+      <p>{task.task}</p>
+      <Button variant="outline-danger" onClick={deleteTask}>Delete</Button>
+    </Container>
   );
 };
 

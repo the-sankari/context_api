@@ -11,8 +11,8 @@ const App = () => {
     <TaskProvider>
       <Container>
         <h1 className="text-center mt-5">Todo List</h1>
-        <TodoForm/>
-        <TodoList/>
+        <TodoForm />
+        <TodoList />
       </Container>
     </TaskProvider>
   );

@@ -6,7 +6,7 @@ export const TaskContext = createContext();
 export const TaskProvider = ({ children }) => {
   const [tasks, setTasks] = useState([]);
   const addTask = (task) => {
-    setTasks([...tasks], { task, completed: false });
+    setTasks([...tasks, { task, completed: false }]);
   };
   const deleteTask = (index) => {
     const newTasks = tasks.filter((_, i) => i !== index);

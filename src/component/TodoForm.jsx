@@ -4,14 +4,14 @@ import { TaskContext } from "./TaskContext";
 
 const TodoForm = () => {
   const [input, setInput] = useState("");
-  
+
   // use useContext to access addTask
   const {addTask} = useContext(TaskContext)
   const handleSubmit = (e) => {
     e.preventDefault();
     addTask(input);
     setInput("");
-    console.log("Submit button clicked");
+    console.log("Submit button clicked", input);
   };
   return (
     <Container className="fluid">
