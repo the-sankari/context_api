@@ -1,8 +1,10 @@
-# React + Vite
+# State Management Introduction – useContext
+In Week 1, we learned about prop drilling and its limitations. In Week 2, we'll explore how React's Context API and useContext can help us avoid prop drilling by providing a more efficient way to pass data between components.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Topics to Learn:
+* React Context API: How to create a global state that can be accessed by any component.
+* useContext Hook: Consuming global state without needing to pass props.
+Solving the Prop Drilling Problem: Refactoring the To-Do app using useContext.
+* Project: Refactoring the To-Do List App Using Context
+We will refactor the To-Do List App from Week 1 to use the Context API for state management. This will allow us to avoid passing props through multiple components (prop drilling).
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
